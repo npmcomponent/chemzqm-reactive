@@ -54,20 +54,19 @@
   var view = new PetView(pet);
 
   reactive(document.querySelector('#edit-pet'), pet, {
-    updateFriends: function(e){
-      var n = parseInt(e.target.value, 10);
-      pet.friends = Array(n);
-      pet.emit('change friends', n);
-    },
-
-    updateName: function(e){
-      pet.name = e.target.value;
-      pet.emit('change name', e.target.value);
-    },
-
-    updateAge: function(e){
-      pet.age = parseInt(e.target.value, 10);
-      pet.emit('change age', pet.age);;
-    }
-  });
+    delegate: {
+      updateFriends: function(e){
+        var n = parseInt(e.target.value, 10);
+        pet.friends = Array(n);
+        pet.emit('change friends', n);
+      },
+      updateName: function(e){
+        pet.name = e.target.value;
+        pet.emit('change name', e.target.value);
+      },
+      updateAge: function(e){
+        pet.age = parseInt(e.target.value, 10);
+        pet.emit('change age', pet.age);;
+      }
+  }})
 </script>

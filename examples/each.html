@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+<style>
+  body {
+    padding: 50px;
+    font: 14px Helvetica, Arial;
+  }
+  label {
+    display: block;
+    clear: both;
+  }
+</style>
+</head>
+<body>
+<script src="../build/build.js"></script>
+<script>
+  var reactive = require('reactive');
+  var array = require('array');
+  var model = require('model');
+  var User = model('User').attr('name');
+  var template = '<ul><li each="people">{this.name()}<a href="#" on-click="remove">remove</a></li></ul>';
+  var names = ['jack', 'lucifier', 'jonathan'];
+
+  var arr = array();
+  names.forEach(function(name) {
+    arr.push(new User({
+      name: name
+    }))
+  })
+  var model = {
+    people: arr
+  };
+  var view = reactive(template, model, {
+    delegate: {
+      remove : function() {
+        debugger;
+      }
+    }
+  });
+  document.body.appendChild(view.el);
+  setTimeout(function(){
+    arr.splice(1, 1);
+  }, 3000);
+</script>
+</body>
+</html>

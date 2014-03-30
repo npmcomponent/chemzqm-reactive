@@ -14,7 +14,9 @@
     "visionmedia/debug": "0.7.4"
   },
   "development": {
+    "component/model": "*",
     "component/assert": "*",
+    "matthewmueller/array": "*",
     "component/clone": "0.1.0"
   },
   "scripts": [
