@@ -277,6 +277,7 @@ The `each` binding allows you to iterate a collection of objects within the mode
 <ul>
   <li each="children">{name}</li>
 </ul>
+```
 
 The model is expected to have a `children` property whose value is an array.
 
@@ -443,8 +444,7 @@ Typically a view object wraps a model to provide additional functionality, this 
 ```js
 function UserView(user) {
   this.user = user;
-  this.view = reactive(tmpl, {
-    model: user
+  this.view = reactive(tmpl, user, {
     delegate: this
   });
 }
