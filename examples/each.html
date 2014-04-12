@@ -20,19 +20,15 @@
   var reactive = require('reactive');
   var array = require('array');
   var model = require('model');
-  var User = model('User').attr('name');
-  var template = '<ul><li each="people">{this.name()}<a href="#" on-click="remove">remove</a></li></ul>';
+  var User = model('User').attr('friends').attr('name');
+  var template = '<ul><li each="friends">{this}<a href="#" on-click="remove">remove</a></li></ul>';
   var names = ['jack', 'lucifier', 'jonathan'];
 
-  var arr = array();
-  names.forEach(function(name) {
-    arr.push(new User({
-      name: name
-    }))
+
+  var model = new User({
+    name: 'Luke',
+    friends: names
   })
-  var model = {
-    people: arr
-  };
   var view = reactive(template, model, {
     delegate: {
       remove : function() {
@@ -41,9 +37,12 @@
     }
   });
   document.body.appendChild(view.el);
+  model.on('change', function(name, val) {
+    console.log(arguments);
+  })
   setTimeout(function(){
-    arr.splice(1, 1);
-  }, 3000);
+    model.friends(['jack', 'lucifier']);
+  }, 1000);
 </script>
 </body>
 </html>
