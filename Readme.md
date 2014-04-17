@@ -1,3 +1,4 @@
+*This repository is a mirror of the [component](http://component.io) module [chemzqm/reactive](http://github.com/chemzqm/reactive). It has been modified to work with NPM+Browserify. You can install it using the command `npm install npmcomponent/chemzqm-reactive`. Please do not open issues or send pull requests against this repo. If you have issues with this repo, report it to [npmcomponent](https://github.com/airportyh/npmcomponent).*
 # reactive [![Build Status](https://travis-ci.org/component/reactive.png?branch=master)](https://travis-ci.org/component/reactive)
 
  Simple and Flexible template and view binding engine with support for custom bindings and real-time updates on model changes.
