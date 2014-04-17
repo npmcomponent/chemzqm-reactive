@@ -10,17 +10,17 @@
     "bindings"
   ],
   "dependencies": {
-    "component/classes": "1.2.1",
-    "component/event": "0.1.3",
-    "component/query": "0.0.3",
-    "component/emitter": "1.1.2",
-    "component/domify": "1.2.2",
-    "yields/carry": "0.0.1",
-    "visionmedia/debug": "0.7.4"
+    "component/classes": "*",
+    "component/event": "*",
+    "component/query": "*",
+    "component/emitter": "*",
+    "component/domify": "*",
+    "yields/carry": "*",
+    "visionmedia/debug": "*"
   },
   "development": {
     "dependencies": {
-      "component/model": "*",
+      "chemzqm/model": "*",
       "component/assert": "*",
       "matthewmueller/array": "*",
       "component/clone": "0.1.0"

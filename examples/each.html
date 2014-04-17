@@ -31,8 +31,10 @@
   })
   var view = reactive(template, model, {
     delegate: {
-      remove : function() {
-        debugger;
+      remove : function(e, reactive) {
+        var name = reactive.model;
+        var i = model.friends.indexOf(name);
+        model.friends = model.friends.splice(i, 1);
       }
     }
   });
@@ -41,7 +43,7 @@
     console.log(arguments);
   })
   setTimeout(function(){
-    model.friends(['jack', 'lucifier']);
+    model.friends = ['jack', 'lucifier'];
   }, 1000);
 </script>
 </body>
