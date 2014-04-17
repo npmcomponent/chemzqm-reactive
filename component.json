@@ -1,6 +1,5 @@
 {
   "name": "reactive",
-  "repo": "component/reactive",
   "description": "Reactive template engine",
   "version": "1.1.1",
   "keywords": [
@@ -20,10 +19,12 @@
     "visionmedia/debug": "0.7.4"
   },
   "development": {
-    "component/model": "*",
-    "component/assert": "*",
-    "matthewmueller/array": "*",
-    "component/clone": "0.1.0"
+    "dependencies": {
+      "component/model": "*",
+      "component/assert": "*",
+      "matthewmueller/array": "*",
+      "component/clone": "0.1.0"
+    }
   },
   "scripts": [
     "lib/index.js",
@@ -36,5 +37,6 @@
     "lib/each.js",
     "lib/walk.js"
   ],
-  "main": "lib/index.js"
+  "main": "lib/index.js",
+  "repository": "component/reactive"
 }
